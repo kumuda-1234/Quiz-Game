@@ -1,0 +1,123 @@
+body {
+    background-color: cyan; /* Changed to cyan blue */
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Soft shadow */
+}
+
+#quiz-container {
+    position: relative;
+    z-index: 10; /* Ensure quiz is above bubbles */
+    text-align: center; /* Center text */
+}
+
+#question-container {
+    font-size: 36px; /* Increased font size for question */
+    color: black; /* Changed to black for question text */
+    margin-bottom: 20px; /* Space below the question */
+}
+
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between buttons */
+}
+
+.btn {
+    padding: 15px 30px; /* Increased button size */
+    font-size: 20px; /* Increased font size for buttons */
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: rgba(255, 255, 255, 0.8); /* Light transparent background */
+    color: black; /* Button text color */
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+.correct {
+    background-color: #4caf50; /* Green for correct answers */
+    color: white;
+}
+
+.wrong {
+    background-color: #dc3545; /* Red for wrong answers */
+    color: white;
+}
+
+#next-btn {
+    margin-top: 20px;
+}
+
+#result {
+    color: #ffffff; /* White text for result */
+    font-size: 24px; /* Font size for result */
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4); /* Transparent white bubbles */
+    animation: bubble-animation 10s infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Soft glow for 3D effect */
+}
+
+@keyframes bubble-animation {
+    0% {
+        transform: translateY(0) scale(0.5);
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+    }
+}
+
+.congratulations {
+    font-size: 36px;
+    color: #FFD700; /* Gold color */
+    margin-top: 20px;
+}
+
+.ribbons {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url('ribbon.png') no-repeat center;
+    background-size: contain;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Snowflake effect */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white; /* Snowflakes are white */
+    font-size: 1em;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}

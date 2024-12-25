@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bubble-sound">
+        <source src="bubble-sound.mp3" type="audio/mpeg">
+    </audio>
+    <div id="quiz-container" class="hidden">
+        <div id="question-container"></div>
+        <div id="answer-buttons"></div>
+        <button id="next-btn" class="btn hidden">Next</button>
+    </div>
+    <div id="result" class="hidden"></div>
+    <button id="start-btn" class="btn">Start Quiz</button>
+    <script src="quiz.js"></script>
+</body>
+</html>
